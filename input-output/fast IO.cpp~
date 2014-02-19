@@ -1,4 +1,11 @@
-
+// Name:- Kunal Sheth
+// Problem:- Enormous Input Test
+// Link:- http://www.codechef.com/problems/INTEST/
+// Site:- CodeChef
+ 
+ 
+ 
+//header files
  
 #include<iostream>
 #include<cstdio>
