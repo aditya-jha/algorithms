@@ -32,6 +32,7 @@ const llu maxn = 1e19;
 
 int main() {
 	ios_base::sync_with_stdio(0);
+	
 	vector<int> v;
 	v.pb(1);
 	DEBUG(v[0]);	
