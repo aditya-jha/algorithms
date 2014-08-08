@@ -4,15 +4,13 @@
 
 using namespace std;
 
-int n=6,k=6;
-
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
     *a = temp;
 }    
 
-void min_heapify(int a[], int index) {
+void min_heapify(int a[], int index, int n) {
     int left = 2*index+1, right = 2*index+2;
     if(left<n and right<n) {
         if(a[left]<a[index]) {
@@ -23,81 +21,73 @@ void min_heapify(int a[], int index) {
                     //left child is less than right child and parent
                     //swap left child with parent
                     swap(a[left], a[index]);
-                    min_heapify(a,left);
+                    min_heapify(a,left,n);
                     return;
                 }    
                 else {
                     //right child is less than left child and parent
                     //swap right child with parent
                     swap(a[right], a[index]);
-                    min_heapify(a,right);
+                    min_heapify(a,right,n);
                     return;
                 }    
             }
             else {
                 //swap left child with parent
                 swap(a[left], a[index]);
-                min_heapify(a,left);
+                min_heapify(a,left,n);
                 return;
             }    
         } 
         else if(a[right] < a[index]) {
             //swap right child with parent
             swap(a[right], a[index]);
-            min_heapify(a,right);
+            min_heapify(a,right,n);
             return;
         }    
     }    
     else if(left < n and a[left] < a[index]) {
         //swap left child with parent
         swap(a[left], a[index]);
-        min_heapify(a,left);
+        min_heapify(a,left,n);
         return;
     }    
 }    
 
-void build_heap(int a[]) {
+void build_heap(int a[], int n) {
     for(int i=(n-1)/2; i>=0; i--) {
-        min_heapify(a, i);
+        min_heapify(a, i, n);
     }    
 }    
 
-void delete_min(int a[]) {
+void delete_min(int a[], int n) {
     swap(a[0], a[n-1]);
     n--;
-    min_heapify(a, 0);
+    min_heapify(a, 0, n);
 }    
 
-void heap_sort(int a[]) {
-    for(int i=0;i<k;i++) delete_min(a);
+void heap_sort(int a[], int n) {
+    for(int i=0;i<n;i++) delete_min(a, n-i);
 }    
 
 int main() {
     
     int a[] = {17,10,9,2,5,8};
-    int t = 6;
+    int n = 6;
     
     for(int i=0;i<n;i++) cout<<a[i]<<" ";
     cout<<endl;
     
-    min_heapify(a,0);
-    
+    min_heapify(a,0,n);
     for(int i=0;i<n;i++) cout<<a[i]<<" ";
     cout<<endl;
     
-    build_heap(a);
-    
+    build_heap(a,n);
     for(int i=0;i<n;i++) cout<<a[i]<<" ";
     cout<<endl;
     
-    heap_sort(a);
+    heap_sort(a,n);
     cout<<"After sorting: ";
-    for(int i=0;i<t;i++) cout<<a[i]<<" ";
-    cout<<endl;
-    
-    
-    delete_min(a);
-    
     for(int i=0;i<n;i++) cout<<a[i]<<" ";
     cout<<endl;
     
