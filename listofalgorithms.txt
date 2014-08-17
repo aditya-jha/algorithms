@@ -46,6 +46,3 @@ Sweep line algorithm
 Kruskal's or Prim's algorithm
 Dijkstra's algorithm
 Convex Hull
-
-
-
