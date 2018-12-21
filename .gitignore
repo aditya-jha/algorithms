@@ -2,3 +2,5 @@
 *.exe
 *.pyc
 a.out
+.idea/
+.DS_Store
