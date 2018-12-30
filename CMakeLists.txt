@@ -7,5 +7,8 @@ project(algorithms)
 
 add_executable(
         output
-        datastructure/stacks/span_calculation.cpp
+#        datastructure/stacks/span_calculation.cpp
+#        sorting/quicksort.cpp
+        sorting/bubblesort.cpp
+
 )
