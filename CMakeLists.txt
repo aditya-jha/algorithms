@@ -9,6 +9,5 @@ add_executable(
         output
 #        datastructure/stacks/span_calculation.cpp
 #        sorting/quicksort.cpp
-        sorting/bubblesort.cpp
-
+        sorting/selectionsort.cpp
 )
